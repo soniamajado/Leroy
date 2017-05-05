@@ -14,17 +14,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de Productos</title>
+        <link href="css/style.css" rel="stylesheet" rel="text/css">
     </head>
     <body>
-                
-<h1>Lista Productos</h1>
-        <%@include file="html/nav.html" %>
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
+         <%@include file="html/nav.html" %>       
+        <h1 align="center">Lista Productos</h1>
+        
+        <table id="tabla2">
+            <tr class="lis">
+                <th class="lis">Id</th>
+                <th class="lis">Nombre</th>
+                <th class="lis">Descripción</th>
+                <th class="lis">Precio</th>
             </tr>
         <%
             
@@ -35,11 +36,11 @@
                 producto aux = (producto) f.leerObjeto();
                 while(aux!=null){
                     
-                    respuesta+="<tr>\n"
-                            + "<td>"+aux.getid()+"</td>\n"
-                            + "<td>"+aux.getNombre()+"</td>\n"
-                            + "<td>"+aux.getdescripcion()+"<td>\n"
-                            + "<td>"+aux.getprecio()+"</td>\n"
+                    respuesta+="<tr class='lis'>\n"
+                            + "<td class='lis'>"+aux.getid()+"</td>\n"
+                            + "<td class='lis'>"+aux.getNombre()+"</td>\n"
+                            + "<td class='lis'>"+aux.getdescripcion()+"</td>\n"
+                            + "<td class='lis'>"+aux.getprecio()+"</td>\n"
                             + "</tr>\n";
                     //respuesta+=aux.toString();
                    

@@ -47,17 +47,26 @@
             
         %>
     <body>
-         <h1>Inserta Producto</h1>
         <%@include file="html/nav.html" %>
-        <h2>Formulario</h2>
-        <form action="insertarProducto.jsp" method="POST">
-            Id:<input type="number" name="id"><br>
-            Nombre:<input type="text" name="nombre"><br>
-            Descripción:<input type="text" name="descripcion"><br>
-            Precio:<input type="number" name="precio"><br>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
-        </form>
+        <h1 align="center">Inserta Producto</h1>
+        
+         <table>
+             <tr><th>Formulario</th></tr>
+        
+            <tr>
+                <td>
+                    <form action="insertarProducto.jsp" method="POST">
+                    Id:<input type="number" name="id"><br>
+                    Nombre:<input type="text" name="nombre"><br>
+                    Descripción:<input type="text" name="descripcion"><br>
+                    Precio:<input type="number" name="precio"><br>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar"><br>
+
+                 </form>
+                </td>
+            </tr>
+        </table>
         <p><%=respuesta%></p>
               
     </body>

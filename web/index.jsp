@@ -10,18 +10,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Leroy Me.</title>
+        <link href="css/style.css" rel="stylesheet" rel="text/css">
     </head>
     <body>
         <%@include file="html/nav.html" %>
         <h1 align="center">ALMACEN LEROY MERLIN</h1>
         
-        <h2>Opciones disponibles</h2>
+        
+        <table id="tabla1">
         <ul>
-            <li><a href="insertarProducto.jsp">Añadir Producto</a></li>
-            <li><a href="listadoProducto.jsp">Listado Producto</a></li>
-           
+            <tr>
+                <th>Opciones disponibles</th>
+            </tr>
+            <tr>
+                <td><a href="insertarProducto.jsp">Añadir Producto</a></td>
+            </tr>
+            <tr>
+                <td><a href="listadoProducto.jsp">Listado Producto</a></td>
+            </tr>
+        </th>
         </ul>
-             
+        </table>  
         
     </body>
 </html>
