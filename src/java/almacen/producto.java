@@ -30,7 +30,7 @@ public class producto implements Serializable{
                 + ", precio=" + precio +'}';
     }
     public int getid() {
-        return (int) precio;
+        return (int) id;
     }
 
     public void setid(int id) {

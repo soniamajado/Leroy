@@ -32,7 +32,7 @@
                 <td><a href="consultarProducto.jsp">Consultar Producto</a><br></td>
             </tr>
             <tr>
-                <td><a href="borrarProducto.jsp">Borrar Producto</a><br></td>
+                <td><a href="borrarProducto.jsp">Eliminar Producto</a><br></td>
             </tr>
         </th>
         </ul>

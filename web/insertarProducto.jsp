@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inserta Alumno</title>
+        <title>Inserta Producto</title>
         <link href="css/style.css" rel="stylesheet" rel="text/css">
         
     </head>
@@ -33,12 +33,14 @@
                         || descripcion==null 
                         || request.getParameter("id")==null)
                 {
+                    
                     respuesta="Alguno de los campos quedó sin rellenar";
                 }
                 else{
+                    
                     f.escribirObjeto(new producto(nombre,descripcion,id,precio));
                     respuesta="Se insertó con éxito";
-                    
+                                      
                 }
                 f.close();
             }catch(NumberFormatException nfe){
