@@ -1,10 +1,6 @@
 package almacen;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
  *
@@ -18,17 +14,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-class AperturaFicheroExcepcion extends Exception{
-    public AperturaFicheroExcepcion(String mensaje){
-        super(mensaje);
-    }
-}
-class CierreFicheroExcepcion extends Exception{
-    public CierreFicheroExcepcion(String mensaje){
-        super(mensaje);
-    }
-}
+
 
 class MiObjectOutputStream extends ObjectOutputStream
 {
@@ -69,7 +58,7 @@ public class fichero {
      *                       wb: Escritura binario
      *                       rb: Lectura binario
      *                       ab: Adición binario
-     * 
+     * @throws AperturaFicheroExcepcion
      */
     public fichero(String nombre, String modoApertura) 
             throws AperturaFicheroExcepcion{
@@ -160,6 +149,65 @@ public class fichero {
         return objeto;
     }
     
+    public ArrayList<producto> leerTodos(){
+        ArrayList<producto> listado = new ArrayList<>();
+        try{
+            producto obj = (producto) this.ois.readObject();
+            while(obj!=null){
+                listado.add(obj);
+                obj=(producto) this.ois.readObject();
+            }
+        }catch(IOException | ClassNotFoundException io){
+            
+        }
+        return listado;
+    }
+    
+    public List leerTodosAntiguo(){
+        List listado = new ArrayList();
+        try{
+            producto obj = (producto) this.ois.readObject();
+            while(obj!=null){
+                listado.add(obj);
+                obj=(producto) this.ois.readObject();
+            }
+        }catch(IOException | ClassNotFoundException io){
+            
+        }
+        return listado;
+    }
+    
+    public void escribirTodos(ArrayList<Object> obj){
+        try{
+            for(Object objeto : obj)
+            {
+                if(this.existiaFichero)
+                    this.moos.writeObject(objeto);
+                else
+                    this.oos.writeObject(objeto);
+            }
+        }catch(IOException io){
+            
+        }
+    }
+    
+    public void escribirTodos(List obj){
+        try{
+            for(Object objeto : obj)
+            {
+                if(this.existiaFichero)
+                    this.moos.writeObject(objeto);
+                else
+                    this.oos.writeObject(objeto);
+            }
+        }catch(IOException io){
+            
+        }
+    }
+    /**
+     * 
+     * @throws CierreFicheroExcepcion 
+     */
     public void close() throws CierreFicheroExcepcion{
         try{
         switch(this.modo){

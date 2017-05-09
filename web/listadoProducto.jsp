@@ -20,7 +20,7 @@
          <%@include file="html/nav.html" %>       
         <h1 align="center">Lista Productos</h1>
         
-        <table id="tabla2">
+        <table align="center" id="tabla2" >
             <tr class="lis">
                 <th class="lis">Id</th>
                 <th class="lis">Nombre</th>

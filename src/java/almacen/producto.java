@@ -1,16 +1,15 @@
 package almacen;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Sonia Majado
  */
+
 public class producto implements Serializable{
     String nombre;
     String descripcion;
@@ -60,5 +59,46 @@ public class producto implements Serializable{
     public void setprecio(int precio) {
         this.precio = precio;
     }
+/**
+     * Convierte un ArrayList de Object a uno de Alumno
+     * @param obj ArrayList<producto> - El ArrayList a convertir
+     * @return ArrayList<nombre> - El ArrayList convertido
+     */
+    public static ArrayList<producto> ObjetoProducto(ArrayList<Object> obj){
+        ArrayList<producto> listado = new ArrayList<>();
+        obj.forEach((objeto) -> {
+            listado.add((producto)objeto);
+        });
+        return listado;
+    }
+    /*
+    public static List ObjetoProducto(List obj){
+        List listado = new ArrayList();
+        for(Object objeto: obj){
+            listado.add((nombre) objeto);
+        }
+        return listado;
+    }*/
+    
+    public static ArrayList<Object> ProductoObjetos(ArrayList<producto> nombres){
+        ArrayList<Object> listado = new ArrayList<>();
+        nombres.forEach((prod) -> {
+            listado.add((producto)prod);
+        });
+        return listado;
+    }
+    /*
+    public static List ObjetoProducto(List<nombre> nombres){
+        List listado = new ArrayList();
+        for(nombre nomb: nombres){
+            listado.add((Object) nomb);
+        }
+        return listado;
+    }
+*/
+  
+    
+
+  
 }
 

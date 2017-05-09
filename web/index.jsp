@@ -23,10 +23,16 @@
                 <th>Opciones disponibles</th>
             </tr>
             <tr>
-                <td><a href="insertarProducto.jsp">Añadir Producto</a></td>
+                <td><a href="insertarProducto.jsp">Añadir Producto</a><br></td>
             </tr>
             <tr>
-                <td><a href="listadoProducto.jsp">Listado Producto</a></td>
+                <td><a href="listadoProducto.jsp">Listado Producto</a><br></td>
+            </tr>
+            <tr>
+                <td><a href="consultarProducto.jsp">Consultar Producto</a><br></td>
+            </tr>
+            <tr>
+                <td><a href="borrarProducto.jsp">Borrar Producto</a><br></td>
             </tr>
         </th>
         </ul>

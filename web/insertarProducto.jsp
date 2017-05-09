@@ -3,6 +3,7 @@
     Created on : 04-may-2017, 12:23:12
     Author     : Sonia Majado
 --%>
+
 <%@page import="almacen.producto"%>
 <%@page import="almacen.fichero"%>
 <%@page import="java.io.*"%>
@@ -41,20 +42,21 @@
                 }
                 f.close();
             }catch(NumberFormatException nfe){
-                respuesta="Error en los numeros";
+                respuesta=" ";
             }
             
             
         %>
     <body>
+        
         <%@include file="html/nav.html" %>
         <h1 align="center">Inserta Producto</h1>
         
-         <table>
-             <tr><th>Formulario</th></tr>
-        
+         <table id="tabla1">
+            <tr><th>Formulario</th></tr>
             <tr>
                 <td>
+                    
                     <form action="insertarProducto.jsp" method="POST">
                     Id:<input type="number" name="id"><br>
                     Nombre:<input type="text" name="nombre"><br>
@@ -63,7 +65,8 @@
                     <input type="submit" value="Enviar">
                     <input type="reset" value="Borrar"><br>
 
-                 </form>
+                    </form>
+                          
                 </td>
             </tr>
         </table>
